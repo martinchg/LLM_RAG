@@ -1,0 +1,29 @@
+[app]
+title = "Chatbot RAG Ineo"
+page_icon = "🤖"
+theme = "dark"
+
+[llm]
+model = "mistral:latest"
+host = "http://localhost:11434"
+
+[embedding]
+model = "intfloat/multilingual-e5-large"
+device = "cpu"
+
+[qdrant]
+host = "localhost"
+port = 6333
+collection_name = "my_collection"
+
+[auth]
+method = "local" # "local" ou "entra" (changer selon le contexte)
+
+# pour local (optionnel si tu veux un chemin custom)
+local_db = "utils/users.json"
+
+# pour Entra ID (remplir plus tard)
+client_id = ""
+tenant_id = ""
+client_secret = ""
+redirect_uri = "http://localhost:8501"

@@ -1,0 +1,11 @@
+{
+  "admin": {
+    "password": "$2b$12$mM.5VGKZRHw8/de4zcIyu.bOZDQiLirBTHaCdWEldEknDvtACSGM2"
+  },
+  "test": {
+    "password": "$2b$12$SMN6DyfwMCFuANYW/jmbGOl7m2qbzPR89sqzL1A7f/lNb0ojNXcLa"
+  },
+  "test2": {
+    "password": "$2b$12$DrpZQKTBIy.ZwXm9RDrRqOdJnC/MbfLN/kMKvQ.2JEomyYLFaxzti"
+  }
+}
