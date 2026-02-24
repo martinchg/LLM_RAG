@@ -81,4 +81,4 @@ Dans le fichier requirements.txt
   ```
 
 - Dans la page upload vous pouvez uploader vos documents et les chunker puis faire l'indexation dans Qdrant
-- Dans la page Chatbot vous pouvez poser vos questions au chatbot
+- Dans la page Chatbot vous pouvez poser vos questions!
