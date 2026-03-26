@@ -1,5 +1,12 @@
-venv_marker/
+# Bloque n'importe quel dossier venv_marker n'importe où dans le projet
 **/venv_marker/
+
+# Bloque aussi les noms standards (au cas où)
+venv/
+.venv/
+env/
+
+# Bloque les fichiers système Mac et les caches Python
 .DS_Store
-**/ .DS_Store
-__pycache__/
+**/__pycache__/
+*.pyc
