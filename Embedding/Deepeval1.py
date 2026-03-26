@@ -87,7 +87,7 @@ Pass rate = Pourcentage de métriques qui dépassent le seuil de 0.5
 
 """
 
-TOP_K = 5        # nombre de documents à récupérer
+TOP_K = 3       # nombre de documents à récupérer
 
 # Chargement des modèles
 retriever_model = SentenceTransformer("BAAI/bge-m3")
@@ -131,6 +131,7 @@ def generate_answer(question):
         response_final += phrase
         chunks_list.append(r["chunk"])
     prompt = f"""
+
 Voici la question à laquelle on souhaite répondre :
 {query}
 

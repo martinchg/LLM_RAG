@@ -43,7 +43,7 @@ sys.path.insert(0, str(ROOT_DIR))
 # Import du pipeline de chunking
 # ============================================================
 
-from Chunking.main_chunking import main as chunking_main
+from Chunking_Agentic.main_chunking import main as chunking_main
 # adapter en chunking.main_chunking si besoin
 
 # ============================================================

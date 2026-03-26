@@ -19,11 +19,19 @@ if not CHUNKS_PATH.exists():
 
 df = pd.read_json(CHUNKS_PATH)
 
-expected_cols = {"text", "document_name", "page_number", "parent_paragraph_id"}
-missing = expected_cols - set(df.columns)
+if "text" not in df.columns:
+    raise ValueError("Colonne obligatoire 'text' manquante dans chunks.json")
 
-if missing:
-    raise ValueError(f"Colonnes manquantes dans chunks.json : {missing}")
+def get_col(candidates, label):
+    found = candidates.intersection(df.columns)
+    if not found:
+        raise ValueError(f"Manque colonne {label} (attendu: {' / '.join(candidates)})")
+    return list(found)[0]
+
+# Récupération dynamique des colonnes
+page_col = get_col({"page", "page_number"}, "pagination")
+doc_col = get_col({"document_name", "filename"}, "document")
+parent_col = get_col({"parent_paragraph_id", "parent_id"}, "ID parent")
 
 print(f"{len(df)} chunks chargés depuis {CHUNKS_PATH.name}")
 print(df.head(3))
@@ -33,9 +41,9 @@ print(df.head(3))
 # ============================================================
 
 df["Chunk"] = df["text"].astype(str)
-df["Doc"] = df["document_name"]
-df["Page"] = df["page_number"].astype(int)
-df["Parent"] = df["parent_paragraph_id"]
+df["Doc"] = df[doc_col]
+df["Page"] = df[page_col].astype(int)
+df["Parent"] = df[parent_col]
 
 # ============================================================
 # 3. Modèle d'embedding

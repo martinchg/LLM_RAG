@@ -1,0 +1,5 @@
+venv_marker/
+**/venv_marker/
+.DS_Store
+**/ .DS_Store
+__pycache__/

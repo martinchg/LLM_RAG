@@ -72,15 +72,15 @@ nest-asyncio
 networkx==3.5
 notebook
 notebook_shim
-numpy==1.26.4
+numpy
 ollama==0.6.0
 overrides
 packaging
-pandas==2.3.3
+pandas
 pandocfilters
 parso
 pexpect
-pillow==11.3.0
+pillow
 platformdirs
 ply==3.11
 portalocker==3.2.0
@@ -132,8 +132,8 @@ threadpoolctl==3.6.0
 tinycss2
 tokenizers==0.21.4
 toml==0.10.2
-torch==2.2.2
-torchvision==0.17.2
+torch
+torchvision
 tornado
 tqdm==4.67.1
 traitlets
@@ -157,12 +157,24 @@ python-magic
 # --- OCR & image handling ---
 pytesseract
 pdf2image
-pi_heif
+# pi_heif
 camelot-py[cv]
 
 # --- Audio transcription (optional extension) ---
-openai-whisper
+openai-whisper==20250625
 
 # --- Data handling & pipeline ---
 pandas
 tqdm
+# --- Added missing dependencies ---
+accelerate
+marker-pdf
+libmagic
+pymupdf4llm
+langchain
+langchain-text-splitters
+langchain-core
+tiktoken
+python-dotenv
+aiofiles
+
